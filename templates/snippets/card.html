@@ -1,35 +1,27 @@
 
-<style>
-
-    .container {
-      padding: 0;
-      margin: 0, auto;
-    }
-
-     .container a {
-      width: 45%;
-      max-width: 250px;
-    }
-
-    .container div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-    }
-
-    .container img {
-      width: 40%;
-    }
-
-</style>
-
-<div class="container">
-
-    <img src="{{ project.image.url }}" alt="">
-
-    <img src="{{ project.image2.url }}" alt="">
-
-    <img src="{{ project.image3.url }}" alt="">
-
+<div class="boop-col">
+    <div class="content_join">
+        <a href="{% url 'projectapp:detail' pk=project.pk %}" target="_blank" class="port_item w-inline-block">
+            <div class="content-block">
+                <div class="item_padding">
+                    <h3 class="heading">
+                        {{ project.title }}
+                    </h3>
+                    <p class="small">
+                        {{ project.content | safe }}
+                    </p>
+                </div>
+                <div class="content-image _1st">
+                    <img src="{{ project.image.url }}" loading="lazy" sizes="(max-width: 767px) 96vw, (max-width: 991px) 75vw, (max-width: 1919px) 622px, 39vw" alt="">
+                </div>
+                <div class="content-image _2nd">
+                    <img src="{{ project.image2.url }}" loading="lazy" sizes="(max-width: 767px) 96vw, (max-width: 991px) 75vw, (max-width: 1919px) 622px, 39vw"  alt="">
+                </div>
+                <div class="content-image _3rd">
+                    <img src="{{ project.image3.url }}" loading="lazy" sizes="(max-width: 767px) 96vw, (max-width: 991px) 75vw, (max-width: 1919px) 622px, 39vw"  alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+    <a href="#" class="btn-hero join home w-button">Join</a>
 </div>
